@@ -1,0 +1,312 @@
+:root {
+  --primary: #2C3E50;
+  --secondary: #E67E22;
+  --light: #F9F9F9;
+  --border: #ddd;
+  --dark: #333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--light);
+  margin: 0;
+  padding: 2rem;
+  position: relative; /* Add this */
+  padding-bottom: 120px;
+}
+
+.edit-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.edit-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.edit-header h1 {/* === CSS VARIABLES FOR THEMING === */
+    :root {
+      --primary: #2C3E50;         /* Main text/header color */
+      --secondary: #E67E22;       /* Accent color (e.g. buttons, highlights) */
+      --light: #F9F9F9;           /* Background color */
+      --border: #ddd;             /* Border color for inputs/dropdowns */
+      --dark: #333;               /* Dark text fallback */
+    }
+    
+    /* === GLOBAL STYLES === */
+    body {
+      font-family: 'Roboto', sans-serif; /* Clean, modern font */
+      background: var(--light);          /* Light background for contrast */
+      margin: 0;
+      padding: 2rem;
+    }
+    
+    /* === MAIN CONTAINER FOR EDIT FORM === */
+    .edit-container {
+      max-width: 600px;
+      margin: auto;                         /* Center horizontally */
+      background: white;                    /* Card-style look */
+      border-radius: 8px;                   /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+      padding: 2rem;
+    }
+    
+    /* === HEADER STYLES === */
+    .edit-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .edit-header h1 {
+      font-family: 'Playfair Display', serif; /* Elegant font for title */
+      color: var(--primary);
+      margin: 0;
+    }
+    
+    /* === FORM LAYOUT === */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem; /* Space between form groups */
+    }
+    
+    /* === FORM GROUP STYLING === */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    label {
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* === INPUT FIELD AND CUSTOM DROPDOWN === */
+    input, .custom-dropdown-toggle {
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--secondary);                    /* Highlight with secondary color */
+      box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);      /* Focus ring effect */
+    }
+    
+    /* === BUTTON STYLES === */
+    .btn {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s; /* Smooth hover transition */
+    }
+    
+    .btn:hover {
+      background: #d35400; /* Darker secondary color on hover */
+    }
+    
+    /* === CUSTOM DROPDOWN MENU === */
+    .custom-dropdown {
+      position: relative;
+    }
+    
+    .custom-dropdown-toggle {
+      cursor: pointer;
+      background: white;
+    }
+    
+    /* === DROPDOWN OPTION LIST === */
+    .dropdown-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-top: none;
+      background: white;
+      z-index: 1;
+      display: none; /* Hidden by default, toggled via JS */
+    }
+    
+    /* === INDIVIDUAL DROPDOWN OPTION === */
+    .dropdown-options label {
+      display: block;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .dropdown-options label:hover {
+      background-color: #f0f0f0;
+    }
+    
+    /* === TAG DISPLAY AREA === */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .tag {
+      background: #eee;
+      padding: 0.4rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* === RESPONSIVE ADJUSTMENTS FOR SMALL SCREENS === */
+    @media (max-width: 480px) {
+      .edit-container {
+        padding: 1.5rem;
+      }
+    }
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+input, .custom-dropdown-toggle {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
+}
+
+.btn {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #d35400;
+}
+
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown-toggle {
+  cursor: pointer;
+  background: white;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-top: none;
+  background: white;
+  z-index: 1;
+  display: none;
+}
+
+.dropdown-options label {
+  display: block;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdown-options label:hover {
+  background-color: #f0f0f0;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background: #eee;
+  padding: 0.4rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+  /* Footer */
+  .main-footer {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    }
+  
+    .main-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    
+    .footer-links {
+    margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    }
+    
+    .copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    }
+
+@media (max-width: 480px) {
+  .edit-container {
+    padding: 1.5rem;
+  }
+}
+}

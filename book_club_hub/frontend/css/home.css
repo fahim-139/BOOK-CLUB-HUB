@@ -1,0 +1,175 @@
+  /* Base Styles */
+  :root {
+    --primary: #2C3E50;
+    --secondary: #E67E22;
+    --light: #F5F5F5;
+    --dark: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin: 0;
+    display: inline-block;
+}
+
+.auth-links {
+    float: right;
+    margin-top: 0.5rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(107, 108, 109, 0.9)),
+                url('../image/bookshelf.jpeg') center/cover;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Genre Cards */
+.featured-genres {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.featured-genres h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.genre-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: white;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+}
+
+.genre-card:hover {
+    transform: translateY(-5px);
+}
+
+.genre-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+}
+
+.genre-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Genre-specific colors */
+.fiction { background: #3498DB; }
+.scifi { background: #1ABC9C; }
+.romance { background: #E74C3C; }
+.fantasy { background: #F39C12; }
+
+/* Footer */
+.main-footer {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-links {
+        float: none;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .logo {
+        display: block;
+        text-align: center;
+    }
+    
+    .genre-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+}
